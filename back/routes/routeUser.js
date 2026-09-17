@@ -28,7 +28,7 @@ router.post("/login", checkBodyLogin,async (req, res) => {
     try {
         const body = req.body
         const data = await compereUser(body)
-        res.status(200).json(data)
+        return res.status(200).json(data)
     } catch (err) {
         if (err.status){
             res.status(err.status).json({message: err.message})
@@ -41,7 +41,7 @@ router.post("/login", checkBodyLogin,async (req, res) => {
 
 router.get("/user", checkToken,async (req, res) => {
     try {
-        const token = req.token
+        const token = req.token        
         const data = await getUser(token);
         res.status(200).json(data)
     } catch (err) {

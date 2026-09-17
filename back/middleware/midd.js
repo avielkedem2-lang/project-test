@@ -14,6 +14,7 @@ export const checkBodyRegister = async (req, res, next) => {
 
 export const checkBodyLogin = (req, res, next) => {
     const body = req.body
+    console.log(body);
     if (loginValidation.safeParse(body).success === false) return res.status(400).json({ message: "The body is not good" });
     next()
 }

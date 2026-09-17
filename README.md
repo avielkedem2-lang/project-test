@@ -1,1 +1,29 @@
 "# project-test" 
+
+
+הרצת הקוד:
+בשיביל להריץ את הקוד אנחנו נצטרך להרית גם את השרת ב בקאנד וגם בפרונט
+backend:
+נתחיל עם,
+npm install
+אחר כך נריץ 
+npm start
+
+
+front:
+נתחיל עם 
+npm install
+אחר כך 
+npm run dev
+
+
+
+משתני סביבה(מה שנמצא בenv):
+
+1. PORT=המשתנה הזה אומר על איזה פורט אני רץ
+
+2. MONGO_DB
+
+3. JWT_KEY
+
+4. JWT_TIME
