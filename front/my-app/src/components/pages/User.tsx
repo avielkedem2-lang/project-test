@@ -6,7 +6,8 @@ import { useNavigate } from "react-router"
 type User = {
   name: string,
   email: string,
-  _id: string
+  _id: string,
+  file?: string
 }
 
 
@@ -34,6 +35,7 @@ export default function User() {
         <p>userName: {data?.name}</p>
         <p>id: {data?._id}</p>
         <p>email: {data?.email}</p>
+        <img src={data?.file} alt="p" />
       </section>
       <button onClick={logOut}>Log out</button>
     </div>

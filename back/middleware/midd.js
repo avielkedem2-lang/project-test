@@ -4,9 +4,10 @@ import { loginValidation, registerValidation } from "../utils/user.zod.js"
 
 export const checkBodyRegister = async (req, res, next) => {
     const body = req.body
+    console.log(body);
+    
     if (registerValidation.safeParse(body).success === false) return res.status(400).json({ message: "The body is not good" });
     body.password = await passwordHash(body.password)
-    console.log(body.password);
     next()
 }
 

@@ -4,7 +4,8 @@ import z, { email } from "zod"
 export const registerValidation = z.object({
     name: z.string().min(1),
     email: z.email(),
-    password: z.string().min(1)
+    password: z.string().min(1),
+    file: z.object().optional()
 })
 
 

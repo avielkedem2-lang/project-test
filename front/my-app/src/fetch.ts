@@ -4,7 +4,8 @@ import axios from "axios";
     type User = {
         name: string,
         email: string,
-        _id: string
+        _id: string,
+        file?: string
     }
 
 
