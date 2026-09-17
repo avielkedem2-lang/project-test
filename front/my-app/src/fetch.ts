@@ -11,7 +11,7 @@ async function sendRequestPost(url:string, body: object) {
         return  {data, status}
     } catch (err) {
         if (axios.isAxiosError(err)){
-            const message = err.message
+            const message = err.response?.data
             console.log(message);
             const status = err.status
             return {message, status}
