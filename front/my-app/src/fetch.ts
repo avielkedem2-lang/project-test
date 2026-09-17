@@ -1,11 +1,11 @@
 import axios from "axios";
 
 
-type User = {
-    name: string,
-    email: string,
-    _id: string
-}
+    type User = {
+        name: string,
+        email: string,
+        _id: string
+    }
 
 
 
@@ -47,7 +47,7 @@ export async function login(body: object) {
 async function sendRequestGet(url: string, token: string) {
     try {
         const { data } = await axios.get<User>(url, { headers: { token } })
-        return data
+        return {data}
     } catch (err) {
         if (axios.isAxiosError(err)) {
             const message = err.response?.data
@@ -61,7 +61,7 @@ async function sendRequestGet(url: string, token: string) {
 
 
 
-async function getUser(token: string) {
+export async function getUser(token: string) {
     // const token = localStorage.getItem("token")
     const url = "http://localhost:3000/user";
     const res = await sendRequestGet(url, token)

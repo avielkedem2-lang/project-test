@@ -19,7 +19,7 @@ export default function Login() {
         e.preventDefault();
         login(user.current).then((data) => {
           if (data?.data) {
-            localStorage.setItem("token", data.data)
+            localStorage.setItem("token", data.data.token)
             navigate("/user")
           }
           isError.current = true;
