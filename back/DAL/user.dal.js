@@ -1,3 +1,4 @@
+import { ObjectId } from "bson";
 import db from "../db/mongodb.js";
 
 
@@ -15,8 +16,13 @@ async function findUser(email) {
 }
 
 
+async function findUserById(id) {
+    return await coll.findOne({_id: new ObjectId(id)})
+}
+
 
 export default {
     insertUser,
     findUser,
+    findUserById,
 }

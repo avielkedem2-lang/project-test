@@ -9,3 +9,8 @@ export function createToken(userId){
 export function isToken(token){
     return jwt.verify(token, process.env.JWT_KEY)
 }
+
+
+export function reversToken(token){
+    return jwt.decode(token)
+}
